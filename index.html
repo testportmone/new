@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Title</title>
+  </head>
+
+  <body>
+    <iframe
+      id="javelinIFRAME"
+      frameborder="0"
+      scrolling="no"
+      src="https://iframe.portmone.com.ua/insurance/osobustui-javelin/iframe?uid=6ada2524eddfbcfbd8fc40661d2e1e0b&agency_id=221"
+      style="width:100%;border:none;"
+      allow="payment"
+    ></iframe>
+
+    <script>
+      function listener(event) {
+        if (event.origin === 'https://iframe.portmone.com.ua') {
+          document.getElementById('javelinIFRAME').style.height = parseInt(event.data?.iframeHeight) + 'px';
+        }
+      }
+
+      if (window.addEventListener) {
+        window.addEventListener('message', listener, false);
+      } else {
+        window.attachEvent('onmessage', listener);
+      }
+    </script>
+  </body>
+</html>
